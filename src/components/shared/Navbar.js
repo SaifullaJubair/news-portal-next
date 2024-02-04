@@ -17,6 +17,7 @@ import {
   YouTube,
 } from "@mui/icons-material";
 import Link from "next/link";
+import Header from "./Header";
 
 const namItems = [
   {
@@ -44,38 +45,41 @@ const namItems = [
 
 function Navbar() {
   return (
-    <AppBar position="static" className="bg-black">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Image src={logo} alt="logo" width={100} height={100} />
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: {
-                xs: "none",
-                md: "flex",
-                justifyContent: "center",
-              },
-            }}
-          >
-            {namItems.map((item) => (
-              <Link href={item.pathName} key={item.route}>
-                <Button className="text-white">{item.route}</Button>
-              </Link>
-            ))}
-          </Box>
-          <Box>
-            <IconButton className="text-white flex gap-1">
-              <Facebook />
-              <Twitter />
-              <YouTube />
-              <LinkedIn />
-              <Instagram />
-            </IconButton>
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
+    <>
+      <Header />
+      <AppBar position="static" className="bg-black">
+        <Container maxWidth="xl">
+          <Toolbar disableGutters>
+            <Image src={logo} alt="logo" width={100} height={100} />
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: {
+                  xs: "none",
+                  md: "flex",
+                  justifyContent: "center",
+                },
+              }}
+            >
+              {namItems.map((item) => (
+                <Link href={item.pathName} key={item.route}>
+                  <Button className="text-white">{item.route}</Button>
+                </Link>
+              ))}
+            </Box>
+            <Box>
+              <IconButton className="text-white flex gap-1">
+                <Facebook />
+                <Twitter />
+                <YouTube />
+                <LinkedIn />
+                <Instagram />
+              </IconButton>
+            </Box>
+          </Toolbar>
+        </Container>
+      </AppBar>
+    </>
   );
 }
 export default Navbar;

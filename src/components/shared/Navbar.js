@@ -30,7 +30,7 @@ const namItems = [
   },
   {
     route: "Category",
-    pathName: "/category",
+    pathName: "/categories/news",
   },
   {
     route: "About",
@@ -47,7 +47,7 @@ function Navbar() {
   return (
     <>
       <Header />
-      <AppBar position="static" className="bg-black">
+      <AppBar position="static" className="bg-black mb-10">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Image src={logo} alt="logo" width={100} height={100} />

@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-        <Container sx={{ height: "74vh" }}>{children}</Container>
+        <Container className="min-h-screen">{children}</Container>
         <Footer />
       </body>
     </html>
